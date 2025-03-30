@@ -4,10 +4,236 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>AoE Market Trainer</title>
   </head>
   <body>
-    <div id="app"></div>
+   
+    <div class="screen-border screen-border-top"></div>
+    
+    <div class="language-selector">
+      <h6 class="font-primary">Language</h6>
+      <ul>
+        <li><button class="english selected-language"></button></li>
+        <li><button class="spanish"></button></li>
+      </ul>
+    </div>
+    
+    <main>
+
+      <!--First Section------------------------------------------------------------------------------------------>
+
+      <section class="section section-info">
+
+        <h1 class="font-primary">Market Trainer</h1>
+        
+        <p class="font-secondary">Welcome to the AoE 2 Market
+          Trainer!
+          Your goal is to pratice the market
+          usage by using your keyboard hotkeys.
+          Buy and Sell resourccs as specified
+          by the action panel and increase the
+          difliculty the higher you go!
+          Bcforc starting, it's rccommcndcd to
+          set up a single player match with any
+          configuration you want, but make sure
+          to set resources to infinite or lligh, so
+          you don't run out of one while playing.</p>
+
+          <div class="personal-info">
+            <p class="font-secondary">Created By</p>
+            <h2 class="font-primary">Manuel Costales</h2>
+            <ul>
+              <li><a href=""></a></li>
+              <li><a href=""></a></li>
+            </ul>
+          </div>
+
+          <ul class="mobile-links">
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+          </ul>
+
+          <button class="mobile-info font-primary"><img src="/difficultyInfo.svg">How To Play</button>
+
+      </section>
+
+      <!--Second Section----------------------------------------------------------------------------------------->
+
+      <section class="section section-main">
+
+        <div class="section-main--top">
+          <h3 class="font-primary">START</h3>
+          <button><img src="/playButton.svg" alt=""></button>
+        </div>
+
+        <div class="section-main--center">
+
+          <div class="corrector">
+            <p class="corrector-wrong font-primary"><img src="/cross.svg">WRONG</p>
+            <p class="corrector-good font-primary">NICE!<img src="/tick.svg"></p>
+          </div>
+
+          <div class="counter font-secondary">2</div>
+
+          <div class="board">
+
+            <div class="action font-primary font-bold">BUY</div>
+
+            <div class="resource">
+              <img class="resource-img" src="/resourceWood.png" alt="">
+              <p class="resource-name font-primary">WOOD</p>
+            </div>
+
+            <div class="score">
+              <p class="score-number font-primary">19900</p>
+              <p class="score-op font-primary">+200</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="section-main--bottom">
+
+          <p class="font-primary">Highest Score:</p>
+          <p class="font-primary">29990</p>
+
+        </div>
+
+      </section>
+
+      <!--Third Section------------------------------------------------------------------------------------------>
+
+      <section class="section section-settings">
+
+        <div class="bindings">
+          <button class="font-primary" id="openModal">
+            <img src="/bindings.svg" alt="">
+            Set Bindings
+          </button>
+        </div>
+
+        <div class="difficulty">
+
+          <div class="difficulty-title">
+            <button><img src="/difficultyInfo.svg" alt=""></button>
+            <h3 class="font-primary">Difficulty</h3>
+          </div>
+
+          <select class="mobile-difficulty font-secondary" name="mobile-difficulty" id="">
+            <option value="beginner" class="font-secondary">Beginner</option>
+            <option value="medium" class="font-secondary">Medium</option>
+            <option value="hard" class="font-secondary">Hard</option>
+          </select>
+
+          <p class="font-secondary">Set the difficulty accordingly to your
+            expertise. The higher the difficulty the
+            faster the action can change.</p>
+
+          
+
+          <div class="difficulty-options">
+
+            <button class="selected font-primary"><img src="/difficultyBeginner.svg" alt="">Beginner</button>
+            <button class="font-primary"><img src="/difficultyMedium.svg" alt="">Medium</button>
+            <button class="font-primary"><img src="/difficultyHard.svg" alt="">Hard</button>
+
+          </div>
+
+        </div>
+
+        <div class="other-options">
+
+          <div class="time-options">
+            <p class="font-secondary">Show Numbers of Time</p>
+            <button class="activate-time"><img src="/checkbox.svg" alt=""></button>
+          </div>
+  
+          <div class="sound-options">
+            <p class="font-secondary">Activate Sound Effects</p>
+            <button class="activate-sound"><img src="/soundOn.svg" alt=""></button>
+          </div>
+
+        </div>
+
+        
+
+      </section>
+
+    </main>
+
+    <div class="screen-border screen-border-bottom"></div>
+
+    <div class="modal" id="modalSettings">
+
+      <div class="modal-settings">
+
+        <button class="exit" id="exitModal"><img src="/exit.svg" alt=""></button>      
+  
+        <h2 class="font-primary">Key Bindings</h2>
+  
+        <div class="market-bind">
+          <label class="font-secondary" for="scales">Select Market Before Action:</label>
+          <input class="checkbox" type="checkbox" id="ifMarket" name="if-market" unchecked />
+        </div>
+  
+        <div class="input-type" id="marketOptional">
+          <label class="font-primary" for="">Select Market</label>
+          <input class="bind-market font-secondary" type="text" id="marketInput" readonly />
+          <button class="bind-market button-bindings record font-primary" id="marketBind">Record<img src="/record.svg"></button>
+        </div>
+
+        <!--Input Group  1 ------------------------------------------->
+
+        <div class="input-group">
+
+          <div class="input-type">
+            <label class="font-primary" for="">Sell Food</label>
+            <input class="sell-food font-secondary" type="text" id="sellFoodInput" placeholder="Ctrl + X" readonly />
+            <button class="sell-food button-bindings record font-primary" id="sellFoodBind">Record<img src="/record.svg"></button>
+          </div>
+
+          <div class="input-type">
+            <label class="font-primary" for="">Sell Wood</label>
+            <input class="sell-wood font-secondary" type="text" id="sellWoodInput" placeholder="Ctrl + X" readonly />
+            <button class="sell-wood button-bindings record font-primary" id="sellWoodBind">Record<img src="/record.svg"></button>
+          </div>
+
+          <div class="input-type">
+            <label class="font-primary" for="">Sell Stone</label>
+            <input class="sell-stone font-secondary" type="text" id="sellStoneInput" placeholder="Ctrl + X" readonly />
+            <button class="sell-stone button-bindings record font-primary" id="sellStoneBind">Record<img src="/record.svg"></button>
+          </div>
+
+        </div>
+
+        <!--Input Group  2 ------------------------------------------->
+
+        <div class="input-group">
+
+          <div class="input-type">
+            <label class="font-primary" for="">Buy Food</label>
+            <input class="buy-food font-secondary" type="text" id="buyFoodInput" placeholder="Ctrl + X" readonly />
+            <button class="buy-food button-bindings record font-primary" id="buyFoodBind">Record<img src="/record.svg"></button>
+          </div>
+
+          <div class="input-type">
+            <label class="font-primary" for="">Buy Wood</label>
+            <input class="buy-wood font-secondary" type="text" id="buyWoodInput" placeholder="Ctrl + X" readonly />
+            <button class="buy-wood button-bindings record font-primary" id="buyWoodBind">Record<img src="/record.svg"></button>
+          </div>
+
+          <div class="input-type">
+            <label class="font-primary" for="">Buy Stone</label>
+            <input class="buy-stone font-secondary" type="text" id="buyStoneInput" placeholder="Ctrl + X" readonly />
+            <button class="buy-stone button-bindings record font-primary" id="buyStoneBind">Record<img src="/record.svg"></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="src/bindings.ts"></script>
   </body>
 </html>
